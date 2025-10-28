@@ -1,0 +1,1 @@
+This is a sample MITRE Caldera plugin that programs an autonomous red-team agent capable of simulating APT-style behavior across the MITRE ATT&CK matrix. The plugin is implemented in Python, integrates with the Sandcat agent for deployment/execution on victim hosts, and uses Caldera ability YAML files to define TTPs (techniques). 
