@@ -1,0 +1,8 @@
+
+name: CyberBotPlugin
+version: '1.0'
+description: 'Autonomous red team agent plugin'
+author: 'Your Name'
+capabilities:
+  - autonomous
+address: /plugin/red_agent/gui
